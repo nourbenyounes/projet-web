@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilemedfemme.css">
+    <title>cardio profil homme </title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="an" href="projetweb.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newsavant.html">News</a>
+        <a class="an" href="log.html">Contact</a>
+        <a class="an" href="aboutavant.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <a  href="log.html"><button class="signn" type="button">Sign in</button></a>
+        <a href="logpat.html"><button class="signn" type="button">Sign up</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+      </div>
+		<div class="doctor-info">
+				
+			<div class="doctor-details">
+                <img src="https://drive.google.com/uc?export=view&id=1-sh3NW5KZVRtgKhDdoQoeELZM_f6Iw-b" alt="Photo de tbiba2">
+				<h2>Docteur Pierre Dupont</h2>
+				<p>Spécialité :Cardiologie</p>
+				<p>Adresse :Delta Médical, Rue Habib Chatti, Tunis 2092</p>
+        <p>Téléphone : 14785236</p>
+
+				<div class="rating">
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star empty"></span>
+                    <span class="star empty"></span>
+                </div>
+                  
+                <div class="container">
+                    <div class="calendar">
+                    <h2>Pour prendre un rendez-vous vous devez faire un sign up/in</h2>
+                    <form>
+                        <br><br>
+                        <a href="log.html"><button  type="button">Prendre un RDV</button></a>
+                    </form>
+                </div>
+
+		</div>       
+    </div>
+    <div class="mapp">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.2933972947576!2d10.149395811290091!3d36.83544877212137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd330ab0a41883%3A0xa785ed1d61c6dfc5!2sDelta%20M%C3%A9dical!5e0!3m2!1sfr!2stn!4v1683294402895!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+        
+    </div>
+    
+    <footer>
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
+
+</body>
+
+
+</html>

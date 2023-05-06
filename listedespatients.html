@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projetweb1.css">
+    <title>liste patients</title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="an" href="garde.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newsmed.html">News</a>
+        <a class="an" href="contactmed.html">Contact</a>
+        <a class="an" href="aboutmed.html">About</a>
+        <input class="bar"type="text" placeholder="Search..">
+        <a  href="medecin.html"><button class="signn" type="button">Vos coordonnées</button></a>
+        <a  href="profilemedfemme.html"><button class="signn" type="button">Votre profil</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+      </div>
+
+
+    <div class="header">
+        <h2>Liste des patients</h2>
+    </div>
+    <div class="content">
+        <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Adresse</th>
+                <th>Contact</th>
+                <th>Mail</th>
+                <th>Fiche</th>
+                <th>Contact</th>
+
+              </tr>
+            </thead>
+            <br>
+            <tbody>
+              <tr>
+                <td><img src="https://drive.google.com/uc?export=view&id=1Whr7PxOBNf8tpoVVPvYSeJ57I7qaVQVO" alt="Photo de tbib1"></td>
+                <td>Doe</td>
+                <td>Jhon</td>
+                <td>1990-01-01</td>
+                <td>   12 Rue des Lilas, 75001 Paris   </td>
+                <td>  225613131215  </td>
+                <td>   mail@example.com  </td>
+                <td><a href="fiche.html"><button class="rdv">consulter fiche</button></a></td>
+                <td><a href="contactmed.html"><button class="rdv">envoyer msg</button></a></td>
+
+              </tr>
+              <tr>
+                <td><img src="https://drive.google.com/uc?export=view&id=1A4mVIGLcPaet_1zCcm7me6Ti9dfzTh5S" alt="Photo de tbiba2"></td>
+                <td>Moreau</td>
+                <td>Marie</td>
+                <td>14/08/1966</td>
+                <td>24 Avenue des Lilas, Lyon</td>
+                <td>   14785236   </td>
+                <td>   pat2@mail.com  </td>
+
+                <td><button class="rdv">consulter fiche</button></td>
+                <td><a href="contactmed.html"><button class="rdv">envoyer msg</button></a></td>
+
+
+              </tr>
+              <tr>
+                <td><img src="https://drive.google.com/uc?export=view&id=1Whr7PxOBNf8tpoVVPvYSeJ57I7qaVQVO" alt="Photo de tbib1"></td>
+                <td>Dupont</td>
+                <td>Pierre</td>
+                <td>18/03/1986</td>
+                <td>12 Rue de la Santé, Paris</td>
+                <td>   14785236   </td>
+                <td>   pat3@mail.com  </td>
+
+                <td><button class="rdv">consulter fiche</button></td>
+                <td><a href="contactmed.html"><button class="rdv">envoyer msg</button></a></td>
+
+
+              </tr>
+              <tr>
+                <td><img src="https://drive.google.com/uc?export=view&id=1Whr7PxOBNf8tpoVVPvYSeJ57I7qaVQVO" alt="Photo de tbib1"></td>
+                <td>Dupont</td>
+                <td>Pierre</td>
+                <td>01/01/2003</td>
+                <td>12 Rue de la Santé, Paris</td>
+                <td>   14785236   </td>
+                <td>   pat4@mail.com  </td>
+
+                <td><button class="rdv">consulter fiche</button></td>
+                <td><a href="contactmed.html"><button class="rdv">envoyer msg</button></a></td>
+
+
+              </tr>
+              <tr>
+                <td><img src="https://drive.google.com/uc?export=view&id=1A4mVIGLcPaet_1zCcm7me6Ti9dfzTh5S" alt="Photo de tbiba2"></td>
+                <td>Moreau</td>
+                <td>Marie</td>
+                <td>03/03/1995/td>
+                <td>24 Avenue des Lilas, Lyon</td>
+                <td>   14785236   </td>
+                <td>   pat5@mail.com  </td>
+
+                <td><a href="profilemedfemme.html"><button class="rdv">consulter fiche</button></a></td>
+                <td><a href="contactmed.html"><button class="rdv">envoyer msg</button></a></td>
+
+
+              </tr>
+              <tr>
+                <td><img src="https://drive.google.com/uc?export=view&id=1A4mVIGLcPaet_1zCcm7me6Ti9dfzTh5S" alt="Photo de tbiba2"></td>
+                <td>Moreau</td>
+                <td>Marie</td>
+                <td>04/04/2007</td>
+                <td>24 Avenue des Lilas, Lyon</td>
+                <td>   14785236   </td>
+                <td>   pat6@mail.com  </td>
+
+                <td><button class="rdv">consulter fiche</button></td>
+                <td><a href="contactmed.html"><button class="rdv">envoyer msg</button></a></td>
+
+
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <footer>
+      <p>tous les droits sont reservés<br>
+      <a href="#">sawssanour@site.com</a></p>
+    </footer> 
+    <script>
+      const footer = document.querySelector('footer');
+
+        window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          footer.classList.add('visible');
+        } else {
+          footer.classList.remove('visible');
+        }
+      });
+
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("dark-mode");
+      }
+      </script>
+</body>
+</html>

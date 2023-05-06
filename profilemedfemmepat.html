@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilemedfemme.css">
+    <title>cardio profil femme </title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="an" href="gardepat.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newspat.html">News</a>
+        <a class="an" href="contactavant.html">Contact</a>
+        <a class="an" href="aboutpat.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <a  href="fichepat.html"><button class="signn" type="button">Vos coordonnées</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+
+      </div>
+		<div class="doctor-info">
+				
+			<div class="doctor-details">
+                <img src="https://drive.google.com/uc?export=view&id=1A4mVIGLcPaet_1zCcm7me6Ti9dfzTh5S" alt="Photo de tbiba2">
+				<h2>Docteur Moreau	Marie</h2>
+				<p>Spécialité : Cardiologie</p>
+				<p>Adresse :45 Rue des Entrepreneurs 2035 Charguia II Tunis- Carthage-Tunisie</p>
+				<p>Téléphone : 14785236</p>
+				<div class="rating">
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star empty"></span>
+                    <span class="star empty"></span>
+                </div>
+                  
+                <div class="container">
+                    <div class="calendar">
+                    <h2>Prendre rendez-vous</h2>
+                    <form>
+                        <label for="date">Choisissez une date :</label>
+                        <input type="date" id="date" name="date" required><br><br>
+                        <label for="time">Choisissez une heure :</label>
+                        <input type="time" id="time" name="time" required><br><br>
+                        <div class="consultation-type">
+                            <label for="type">Type de consultation :</label>
+                            <select id="type" name="type" required>
+                            <option value="en-ligne">En ligne</option>
+                            <option value="en-personne">En personne</option>
+                            </select>
+                        </div><br><br>
+                        <a href="rdvsuc.html"><button  type="button">Prendre un RDV</button></a>
+                    </form>
+                </div>
+
+		</div>
+
+ 
+        
+    </div>
+    <div class="mapp">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.612019205919!2d10.208568011290831!3d36.85176697211674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd34d69e694547%3A0xe1e0376f3637688f!2s%C3%89cole%20Nationale%20d&#39;Ing%C3%A9nieurs%20de%20Carthage!5e0!3m2!1sfr!2stn!4v1683294178054!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+    </div>
+    <footer>
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilemedfemme.css">
+    <title>cardio profil femme </title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="an" href="garde.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newsmed.html">News</a>
+        <a class="an" href="contactmed.html">Contact</a>
+        <a class="an" href="aboutmed.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <a  href="medecin.html"><button class="signn" type="button">Vos coordonnées</button></a>
+        <a  href="profilemedfemme.html"><button class="signn" type="button">Votre profil</button></a>
+        <a  href="listedespatients.html"><button class="signn" type="button">Liste patients</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+
+      </div>
+		<div class="doctor-info">
+				
+			<div class="doctor-details">
+                <img src="https://drive.google.com/uc?export=view&id=1A4mVIGLcPaet_1zCcm7me6Ti9dfzTh5S" alt="Photo de tbiba2">
+				<h2>Docteur Moreau	Marie</h2>
+				<p>Spécialité : Cardiologie</p>
+				<p>Adresse : 24 Avenue des Lilas, Lyon</p>
+				<p>Téléphone : 14785236</p>
+				<div class="rating">
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star empty"></span>
+                    <span class="star empty"></span>
+                </div>
+                  
+                <div class="container">
+                    <div class="calendar">
+                    <h2>Prendre rendez-vous</h2>
+                    <form>
+                        <label for="date">Choisissez une date :</label>
+                        <input type="date" id="date" name="date" required><br><br>
+                        <label for="time">Choisissez une heure :</label>
+                        <input type="time" id="time" name="time" required><br><br>
+                        <div class="consultation-type">
+                            <label for="type">Type de consultation :</label>
+                            <select id="type" name="type" required>
+                            <option value="en-ligne">En ligne</option>
+                            <option value="en-personne">En personne</option>
+                            </select><br><br>
+                            <input  type="text" placeholder="Nom du patient">
+
+                        </div><br><br>
+                        <a href="rdvsucmed.html"><button  type="button">Prendre un RDV</button></a>
+                    </form>
+                </div>
+
+		</div>
+
+ 
+        
+    </div>
+    <div class="mapp">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11184.944764547527!2d4.868224!3d45.7500635!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x212a30dc15e25b8c!2s24%20Avenue%20des%20Lilas%2C%2069003%20Lyon!5e0!3m2!1sfr!2sfr!4v1651316608305!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        
+    </div>
+    <footer>
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
+
+</body>
+
+
+</html>

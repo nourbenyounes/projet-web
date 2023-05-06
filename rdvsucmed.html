@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>succes rdv</title>
+    <link rel="stylesheet" href="log.css">
+  </head>
+  <body>
+    <div class="topnav">
+        <a href="garde.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a href="newsmed.html">News</a>
+        <a href="contactmed.html">Contact</a>
+        <a href="aboutmed.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+      </div>
+    <form class="signup">
+        <div class="imgcontainer">
+          <img src="https://drive.google.com/uc?export=view&id=14nD-eadEEAmZJO_xv_2AAltJO8ODkRCc" alt="check icon" class="avatar">
+        </div>
+      
+        <div class="container">
+          <h1>Votre Rendez-vous a été pris avec succés!</h1>
+          
+      </form>
+      <footer>
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script> 
+  </body>
+</html>

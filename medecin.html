@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilemedfemme.css">
+    <title> profil medecin </title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="an" href="garde.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newsmed.html">News</a>
+        <a class="an" href="contactmed.html">Contact</a>
+        <a class="an" href="aboutmed.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <a  href="medecin.html"><button class="signn" type="button">Vos coordonnées</button></a>
+        <a  href="profilemedfemme.html"><button class="signn" type="button">Votre profil</button></a>
+        <a  href="listedespatients.html"><button class="signn" type="button">Liste patients</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+      </div>
+		<div class="doctor-info">
+				
+			<div class="doctor-details">
+                <h2>Vos coordonnées sont:</h2>
+                <img src="https://drive.google.com/uc?export=view&id=1A4mVIGLcPaet_1zCcm7me6Ti9dfzTh5S" alt="Photo de tbiba2">
+				<p id="cor"></p>
+				<div class="rating">
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star filled"></span>
+                    <span class="star empty"></span>
+                </div>
+                <form>
+                    <p>etes vous indisponible?</p>
+                    <label for="start-date">date et heure de debut</label>
+                    <input type="datetime-local" id="start-date" name="start-date"><br><br>
+            
+                    <label for="end-date">date et heure de fin</label>
+                    <input type="datetime-local" id="end-date" name="end-date"><br><br>
+                        <label for="date">Votre prochain rendez-vous est dans :</label>
+                        <p  id="demo"></p>
+                        <label for="date">Votre prochain rendez-vous est :</label>
+                        <p  id="demoo"></p>
+                        <label for="date">Le nom de votre patient est :</label>
+                        <a href="fiche.html"><p  id="demo1"></p></a>
+
+                        </form>
+                        <form class="modif">
+                          <input id="nom" class="modif" type="text" placeholder="Modifier votre nom">
+                          <input id="prenom" class="modif" type="text" placeholder="Modifier votre prénom">
+                          <input id="adr" class="modif" type="text" placeholder="Modifier votre adresse">
+                          <input id="tel"class="modif" type="text" placeholder="Modifier votre téléphone">
+                          <button  id="modif" class="signn" type="button">Modifier vos coordonnées</button>
+                      </form>
+                </div>
+    <footer>
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+        var med={
+          nom:'Moreau',
+          prenom:'Marie',
+				  spécialité : 'Cardiologie',
+				  adresse : '24 Avenue des Lilas, Lyon',
+				  téléphone : '14785236',
+        }
+        var rdv = [
+        {
+            idrdv: 1,
+            daterdv: '2023-05-01',
+            heurerdv: '10:00',
+            idpat: 'Doe Jhon',
+            idmed: 1,
+            motifrdv: 'en personne'
+        },
+        {
+            idrdv: 2,
+            daterdv: '2023-05-02',
+            heurerdv: '15:30',
+            idpat: 'Doe Jhon',
+            idmed:1,
+            motifrdv: 'en ligne'
+        },
+        {
+            idrdv: 3,
+            daterdv: '2023-05-03',
+            heurerdv: '11:15',
+            idpat: 'Doe Jhon',
+            idmed: 1,
+            motifrdv: 'en ligne'
+        }
+        ];
+        document.getElementById("cor").innerHTML = 'Docteur '+med.nom+' '+med.prenom+ "<br>Spécialité: " +med.spécialité + "<br>Adresse : " + med.adresse + "<br>Téléphone: " + med.téléphone ;
+
+        function getRandomInt(max) {
+        return Math.floor(Math.random()*max );
+        }
+        var x=getRandomInt(4);
+        var rdvn=rdv[x];
+        var countDownDate = new Date(rdvn.daterdv+' '+rdvn.heurerdv).getTime();
+        var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+         document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";}, 1000);
+
+          document.getElementById("demoo").innerHTML = rdvn.motifrdv;
+          document.getElementById("demo1").innerHTML = rdvn.idpat;
+
+                   var form = document.querySelector('.modif');
+                    var submitBtn = document.getElementById('modif');
+
+                    function modifCor(event) {
+                    event.preventDefault();
+                    var nom = form.elements['nom'].value;
+                    var prenom = form.elements['prenom'].value;
+                    var adr = form.elements['adr'].value;
+                    var tel = form.elements['tel'].value;
+                    if (nom != '') {
+                        med.nom = nom;
+                    }
+                    if (prenom != '') {
+                        med.prenom = prenom;
+                    }
+                    if (adr != '') {
+                        med.adresse = adr;
+                    }
+                    if (tel != '') {
+                        med.téléphone = tel;
+                    }
+                    document.getElementById("cor").innerHTML = 'Docteur '+med.nom+' '+med.prenom+ "<br>Spécialité: " +med.spécialité + "<br>Adresse : " + med.adresse + "<br>Téléphone: " + med.téléphone ;
+
+                    }
+
+                    submitBtn.addEventListener('click', modifCor);
+
+
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
+      
+</body>
+
+
+</html>

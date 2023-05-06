@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="log.css">
+  </head>
+  <body>
+    <div class="topnav">
+        <a href="projetweb.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a href="newsavant.html">News</a>
+        <a href="log.html">Contact</a>
+        <a href="aboutavant.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+      </div>
+    <form class="signup">
+        <div class="imgcontainer">
+          <img src="https://drive.google.com/uc?export=view&id=1LhJ0bLyslSEKlkmQkYO6fJbvy4iiBLBb" alt="user icon" class="avatar">
+        </div>
+      
+        <div class="container">
+          
+          <label for="mail"><b>E-MAIL</b></label>
+          <input type="text" placeholder="Entrez votre e-mail" name="mail" id="email" ><br>
+          <label for="id"><b>ID</b></label><br>
+          <input type="password" placeholder="Entrez votre id" name="id" id="id"><br>
+          <label><b>Choisissez une option :</b></label><br>
+  <label>
+    <input type="radio" name="option" value="sec" id="option">
+    secretaire
+  </label>
+  <label>
+    <input type="radio" name="option" value="medecin"id="option">
+    medecin
+  </label>
+  <label>
+    <input type="radio" name="option" value="user"id="option">
+    patient
+  </label>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> remember me
+          </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <a href="#"> <span >vous avez oublié l'id?</span></a>
+          </div>
+        </div>
+        <div class="boutons">
+          <button  id="signup" type="button">Sign in </button>
+            
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <a href="logpat.html">Sign up</a>
+                  </div>
+      </form>
+      <footer class="visible">
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      
+
+      
+<script>
+var form = document.querySelector('.signup');
+var submitBtn = document.getElementById('signup');
+var users = [];
+var doctors = [];
+
+  var user = {
+    email: '',
+    firstName: '',
+    lastName: '',
+    birthDate: '',
+    address: '',
+    phone: '',
+    id:''
+  };
+  var doc = {
+    email: '',
+    firstName: '',
+    lastName: '',
+    specialite: '',
+    address: '',
+    phone: '',
+    id:''
+  };
+function userExists(user) {
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].email === user.email && users[i].id === user.id) {
+      return true;
+    }
+  }
+  return false;
+}
+function getUser(user) {
+  if (userExists(user)){
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].email === user.email && users[i].id === user.id) {
+      user.firstName=users[i].firstName ;
+      user.lastName =users[i].lastName ;
+      user.address =users[i].address ;
+      user.birthDate=users[i].birthDate ;
+      user.phone=users[i].phone;
+      return user;
+    }
+  }
+}}
+
+function docExists(doc) {
+  for (var i = 0; i < doctors.length; i++) {
+    if (doctors[i].email === doc.email && doctors[i].id === doc.id) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function getDoc(doc) {
+  if (userExists(doc)){
+  for (var i = 0; i < doctors.length; i++) {
+    if (doctors[i].email === doc.email && doctors[i].id === doc.id) {
+      doc.firstName=doctors[i].firstName ;
+      doc.lastName =doctors[i].lastName ;
+      doc.address =doctors[i].address ;
+      doc.specialite=doctors[i].specialite ;
+      doc.phone=doctors[i].phone;
+      return doc;
+    }
+  }
+}}
+
+function submitForm(event) {
+  event.preventDefault();
+  var email = form.elements['email'].value;
+  var id = form.elements['id'].value;
+  var option = form.elements['option'].value;
+  if(option==='user'){
+    user.email= email;
+    user.id=id;
+  }
+  else if(option==='sec'||option==='medecin'){
+    doc.email=email;
+    doc.id=id;
+  };
+  var user1 = {
+    email: "tabainour30@gmail.com",
+    firstName: "nour",
+    lastName: "benyounes",
+    birthDate: "01/01/2001",
+    address: "tunis",
+    phone: "147852",
+    id: '1'
+  };
+  var doc2 = {
+    email: "sawssancherif2006@gmail.com",
+    firstName: "sawssan",
+    lastName: "cherif",
+    specialite: "neuro",
+    address: "rafraf",
+    phone: "146252",
+    id:'2'
+  };
+  if(!userExists(user1)){users.push(user1);}
+  if(!docExists(doc2)){doctors.push(doc2);}
+  
+   if ((option === 'user') && (email !== '' && id !== '')) {
+    if (userExists(user)) {
+      var userr=getUser(user);
+      //alert('vos coordonnées sont:\n nom et prénom  :' + userr.firstName + ' ' + userr.lastName + '\n Date de naissance: ' + userr.birthDate + '\n adresse: ' +userr.address + '\n téléphone :' +userr.phone);
+      window.location.href = "gardepat.html";
+    }else{alert("veuillez s'inscrire");
+         window.location.href = "logpat.html";
+     } 
+      } else if ((option === 'medecin' || option === 'sec') && (email !== '' && id !== '')) {
+      if (docExists(doc)) {
+        var userr=getDoc(doc);
+        //alert('vos coordonnées sont:\n nom et prénom  :' + userr.firstName + ' ' + userr.lastName + '\n Spécialité: ' + userr.specialite + '\n adresse: ' +userr.address + '\n téléphone :' +userr.phone);
+
+         window.location.href = "garde.html";
+      }else {alert("veuillez s'inscrire");
+            window.location.href = "logmed.html";
+          }
+  }
+  else{ alert("veuillez remplir tous les champs");}
+
+    console.log((docExists(doc)));
+    console.log((doc));
+    console.log((getDoc(doc)));
+    console.table(doctors)
+
+
+ }
+
+
+submitBtn.addEventListener('click', submitForm);
+
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+  </script>
+  </body>
+</html>

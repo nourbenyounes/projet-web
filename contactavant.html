@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="an" href="gardepat.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newspat.html">News</a>
+        <a class="an" href="contactavant.html">Contact</a>
+        <a class="an" href="aboutpat.html">About</a>
+        <input class="bar"type="text" placeholder="Search..">
+        <a  href="fichepat.html"><button class="signn" type="button">Vos coordonnées</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+
+
+        
+      </div>
+      <div class="container" style=" margin-bottom: 50px;">
+        <div style="text-align: center; color:#21B6A8;">
+          <h2>Contactez votre medecin</h2>
+          <p>en un simple clique</p>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="https://drive.google.com/uc?export=view&id=121BvELSlzZ50aFgvFIf_VztEH1dz2RKr" >
+          </div>
+          <div class="column">
+            <form >
+              <label style="color: #21B6A8;" for="mname">Le nom de votre medecin</label>
+              <input class="bar" type="text" id="fname" name="firstname" placeholder="Entrez le nom ..">
+              <label style="color: #21B6A8;"id="lname">Le prénom de votre medecin</label>
+              <input class="bar" type="text" id="lname" name="lastname" placeholder="Entrez le prénom..">
+              <label style="color: #21B6A8; "for="idrdv">L'id de votre rendez vous</label>
+              <input class="bar" type="text" id="idrdv" name="idrdv" placeholder="L'id du rdv..">
+              <label style="color: #21B6A8;"for="subject">Message ou question</label>
+              <textarea class="bar" id="subject" name="subject" placeholder="Ecrivez votre msg.." style="height:170px"></textarea>
+              <input class="signn" type="submit" value="Envoyer">
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer >
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+       </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script> 
+
+    
+</body>
+</html>

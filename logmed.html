@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="log2.css">
+  </head>
+  <body>
+    <div class="topnav">
+        <a href="projetweb.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a href="newsavant.html">News</a>
+        <a href="log.html">Contact</a>
+        <a href="aboutavant.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+    </div>
+    <form class="signup">
+        <div class="imgcontainer">
+          <img src="https://drive.google.com/uc?export=view&id=1LhJ0bLyslSEKlkmQkYO6fJbvy4iiBLBb" alt="user icon" class="avatar">
+        </div>
+      
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p>Pour créer votre compte veuillez remplir le form</p>
+          <div>
+            <label for="mail"><b>Email</b></label><br>
+            <input type="text" placeholder="Entrez votre e-mail" name="mail" id="mail" required><br>
+            <span id="email-validation" class="validation"></span>
+            <label for="fname"><b>Nom</b></label><br>
+            <input type="text" placeholder="Entrez votre nom" name="fname" id="fname"required><br>
+            <span id="fname-validation" class="validation"></span>
+            <label for="name"><b>Prénom</b></label>
+            <input type="text" placeholder="Entrez votre prénom" name="name" id="name"required ><br>
+            <span id="name-validation" class="validation"></span>
+            <label for="adress"><b>Adresse</b></label>
+            <input type="text" placeholder="Entrez votre adresse" name="adress" id="adress"required><br>
+            <span id="adress-validation" class="validation"></span>
+            <label for="tel"><b>Téléphone</b></label>
+            <input type="text" placeholder="Entrez votre telephone" name="tel" id="tel" ><br>
+            <span id="tel-validation" class="validation"></span>
+            <label for="tel"><b>Spécialité</b></label>
+            <select id="specialite" name="specialite" >
+                <option value="cardio">Cardiologie</option>
+                <option value="neuro">Neuro</option>
+            </select><br>
+            <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <p>En créant votre compte vous accepter nos <a href="#" style="color:dodgerblue">Conditions d'utilisations</a>.</p>
+         </div>
+         <div class="boutons">
+            <button  id="signup" type="button">Sign up medecin</button>
+         </div>
+         <div class="container" style="background-color:#f1f1f1">
+            <a href="log.html"> Sign in</a>
+         </div>
+         <script>
+                var form = document.querySelector('.signup');
+             var submitBtn = document.getElementById('signup');
+var users = [];
+function userExists(user) {
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].email === user.email) {
+      return true;
+    }
+  }
+  return false;
+}
+function addUser(user) {
+  users.push(user);
+}
+function submitForm(event) {
+  event.preventDefault();
+
+  var email = form.elements['mail'].value;
+  var firstName = form.elements['fname'].value;
+  var lastName = form.elements['name'].value;
+  var address = form.elements['adress'].value;
+  var phone = form.elements['tel'].value;
+  var specialite = form.elements['specialite'].value;
+
+  function getRandomInt(max){
+      return Math.floor(Math.random()*max );}
+    var id=getRandomInt(1820);
+
+ var user1 = {
+    email: "tabainour30@gmail.com",
+    firstName: "nour",
+    lastName: "benyounes",
+    address: "tunis",
+    phone: "147852",
+    specialite:"cardio",
+    id:1};
+
+    var user2 = {
+    email: "sawssancherif2006@gmail.com",
+    firstName: "sawssan",
+    lastName: "cherif",
+    phone: "146252",
+    specialite:"neuro",
+    adress:"rafraf",
+    id:2};
+    addUser(user1);
+    addUser(user2);
+  var user = {
+    email: email,
+    firstName: firstName,
+    lastName: lastName,
+    specialite: specialite,
+    address: address,
+    phone: phone,
+    id:id
+  };
+  if (userExists(user)) {
+    alert('Cet utilisateur existe déjà.');
+
+  } else if((email=='')|| (firstName=='')||(lastName=='')||(address=='')||(phone=='')){
+    alert('veuillez remplir tous les champs')
+  }else {
+    addUser(user);
+    alert('votre id est :'+id);
+    window.location.href = "garde.html";
+  }
+
+  console.table(users);
+}
+
+submitBtn.addEventListener('click', submitForm);
+
+
+          function myFunction() {
+             var element = document.body;
+             element.classList.toggle("dark-mode");
+          }
+          </script>
+        
+
+      </form>
+      <footer>
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+      </footer> 
+      <script>
+        const footer = document.querySelector('footer');
+  
+          window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            footer.classList.add('visible');
+          } else {
+            footer.classList.remove('visible');
+          }
+        });
+      </script> 
+  </body>
+</html>

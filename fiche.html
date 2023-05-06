@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profilemedfemme.css">
+    <title> fiche patient </title>
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="an" href="garde.html" ><img src="https://drive.google.com/uc?export=view&id=1SvUGCgG3cSymnMRzfeAdDhmmJeL1EXEE" alt="Home" ></a>
+        <a class="an" href="newsmed.html">News</a>
+        <a class="an" href="contactmed.html">Contact</a>
+        <a class="an" href="aboutmed.html">About</a>
+        <input class="bar" type="text" placeholder="Search..">
+        <a  href="medecin.html"><button class="signn" type="button">Vos coordonnées</button></a>
+        <a  href="profilemedfemme.html"><button class="signn" type="button">Votre profil</button></a>
+        <a  href="listedespatients.html"><button class="signn" type="button">Liste patients</button></a>
+        <button class="signn" onclick="myFunction()">dark mode</button>
+
+      </div>
+		<div class="doctor-info">
+				
+			<div class="doctor-details">
+                <h2>Les coordonnées sont:</h2>
+                <img src="https://drive.google.com/uc?export=view&id=1Whr7PxOBNf8tpoVVPvYSeJ57I7qaVQVO" alt="photo de profil">
+                <p id="demo"></p>
+                <form class="modif">
+                <input id="medi" class="modif" type="text" placeholder="Modifier le medicament">
+                <input id="dose"class="modif" type="text" placeholder="Modifier la dose">
+                <button  id="modif" class="signn" type="button">Modifier le traitement</button>
+            </form>
+
+
+
+                
+                <script>
+                     var pat = 
+                    {
+                        nom: 'Doe',
+                        prenom: 'John',
+                        dateNaissance: '1990-01-01',
+                        adresse: '12 Rue des Lilas, 75001 Paris',
+                        telephone: '225613131215',
+                        mail: 'mail@example.com',
+                        sexe:'m'
+                    };
+                    var trait =
+                        {
+                            idtrait: 1,
+                            datedeb: '2023-05-01',
+                            datefin: '2023-05-05',
+                            dose: '1 comprimé par jour',
+                            medicament: 'Paracétamol'
+                        };            
+                    document.getElementById("demo").innerHTML = "Le patient est : " + pat.nom+' '+pat.prenom + "<br>Date de naissance: " + pat.dateNaissance + "<br>Adresse : " + pat.adresse + "<br>Téléphone: " + pat.telephone + "<br>E-mail " + pat.mail+"<br>L'id du traitement: " + trait.idtrait + "<br>Date début: " + trait.datedeb + "<br>Date fin: " + trait.datefin + "<br>Dose: " + trait.dose + "<br>Médicament: " + trait.medicament;
+                    var form = document.querySelector('.modif');
+                    var submitBtn = document.getElementById('modif');
+
+                    function modifTrait(event) {
+                    event.preventDefault();
+                    var medi = form.elements['medi'].value;
+                    var dose = form.elements['dose'].value;
+                    if (medi != '') {
+                        trait.medicament = medi;
+                    }
+                    if (dose != '') {
+                        trait.dose = dose;
+                    }
+                    console.log(trait.medicament);
+                    console.log(trait.dose);
+                    document.getElementById("demo").innerHTML = "Le patient est : " + pat.nom + ' ' + pat.prenom + "<br>Date de naissance: " + pat.dateNaissance + "<br>Adresse : " + pat.adresse + "<br>Téléphone: " + pat.telephone + "<br>E-mail " + pat.mail + "<br>L'id du traitement: " + trait.idtrait + "<br>Date début: " + trait.datedeb + "<br>Date fin: " + trait.datefin + "<br>Dose: " + trait.dose + "<br>Médicament: " + trait.medicament;
+
+                    }
+
+                    submitBtn.addEventListener('click', modifTrait);
+
+
+
+
+
+
+                    function myFunction() {
+                       var element = document.body;
+                       element.classList.toggle("dark-mode");
+                    }
+                    </script>
+                </div>
+
+    <footer class="visible">
+        <p>tous les droits sont reservés<br>
+        <a href="#">sawssanour@site.com</a></p>
+    </footer> 
+      
+      
+</body>
+
+
+</html>
